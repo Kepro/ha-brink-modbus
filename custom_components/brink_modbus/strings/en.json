@@ -1,0 +1,128 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "BRINK Heat Recovery Unit Setup",
+        "description": "Configure your BRINK HRU device connection",
+        "data": {
+          "port": "Serial Port",
+          "slave_id": "Modbus Slave ID",
+          "baudrate": "Baudrate",
+          "model": "BRINK Model"
+        },
+        "data_description": {
+          "port": "Serial port path (e.g., /dev/ttyUSB0)",
+          "slave_id": "Modbus slave address (1-247, default: 20)",
+          "baudrate": "Communication speed (default: 19200)",
+          "model": "Select your BRINK model"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to BRINK device. Please check: 1) Serial port path is correct, 2) USB to RS485 converter is connected, 3) Slave ID matches device setting (default: 20), 4) Wall controller is disconnected. Check logs for detailed error message.",
+      "unknown": "Unexpected error occurred. Check Home Assistant logs for details."
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "device_type": {"name": "Device Type"},
+      "serial_number_1": {"name": "Serial Number 1"},
+      "serial_number_2": {"name": "Serial Number 2"},
+      "software_version": {"name": "Software Version"},
+      "supply_pressure": {"name": "Supply Pressure"},
+      "exhaust_pressure": {"name": "Exhaust Pressure"},
+      "supply_volume_setpoint": {"name": "Supply Volume Setpoint"},
+      "exhaust_volume_setpoint": {"name": "Exhaust Volume Setpoint"},
+      "supply_volume_actual": {"name": "Supply Volume Actual"},
+      "exhaust_volume_actual": {"name": "Exhaust Volume Actual"},
+      "supply_fan_rpm": {"name": "Supply Fan RPM"},
+      "exhaust_fan_rpm": {"name": "Exhaust Fan RPM"},
+      "supply_air_temperature": {"name": "Supply Air Temperature"},
+      "exhaust_air_temperature": {"name": "Exhaust Air Temperature"},
+      "outside_temperature": {"name": "Outside Temperature"},
+      "filter_usage_hours": {"name": "Filter Usage Hours"},
+      "co2_sensor_1": {"name": "CO2 Sensor 1"},
+      "co2_sensor_2": {"name": "CO2 Sensor 2"},
+      "co2_sensor_3": {"name": "CO2 Sensor 3"},
+      "co2_sensor_4": {"name": "CO2 Sensor 4"},
+      "bypass_state": {"name": "Bypass State"},
+      "filter_state": {"name": "Filter State"},
+      "preheater_state": {"name": "Preheater State"},
+      "bypass_mode_setting": {"name": "Bypass Mode"},
+      "power_switch_position": {"name": "Power Switch Position"}
+    },
+    "binary_sensor": {
+      "filter_dirty": {"name": "Filter Dirty"},
+      "preheater_active": {"name": "Preheater Active"},
+      "modbus_control_active": {"name": "Modbus Control Active"},
+      "imbalance_allowed": {"name": "Imbalance Allowed"},
+      "geo_heat_exchanger": {"name": "Geo Heat Exchanger"},
+      "co2_sensor_active": {"name": "CO2 Sensor Active"}
+    },
+    "select": {
+      "bypass_mode": {"name": "Bypass Mode"},
+      "power_switch_position": {"name": "Power Switch Position"},
+      "modbus_control_mode": {"name": "Modbus Control Mode"}
+    },
+    "number": {
+      "flow_level_0_absence": {"name": "Flow Level 0 (Absence)"},
+      "flow_level_1_low": {"name": "Flow Level 1 (Low)"},
+      "flow_level_2_normal": {"name": "Flow Level 2 (Normal)"},
+      "flow_level_3_high": {"name": "Flow Level 3 (High)"},
+      "flow_setpoint": {"name": "Flow Setpoint"},
+      "supply_imbalance_offset": {"name": "Supply Imbalance Offset"},
+      "exhaust_imbalance_offset": {"name": "Exhaust Imbalance Offset"},
+      "geo_min_temperature": {"name": "Geo Min Temperature"},
+      "geo_max_temperature": {"name": "Geo Max Temperature"}
+    },
+    "switch": {
+      "imbalance_allowed": {"name": "Imbalance Allowed"},
+      "co2_sensor_mode": {"name": "CO2 Sensor Mode"},
+      "geo_heat_exchanger": {"name": "Geo Heat Exchanger"},
+      "device_reset": {"name": "Device Reset"}
+    }
+  },
+  "services": {
+    "set_bypass_mode": {
+      "name": "Set bypass mode",
+      "description": "Set the bypass mode for the BRINK HRU unit",
+      "fields": {
+        "mode": {
+          "name": "Bypass mode",
+          "description": "The bypass mode to set"
+        }
+      }
+    },
+    "set_flow_speed": {
+      "name": "Set flow speed",
+      "description": "Set the target flow speed for the BRINK HRU unit",
+      "fields": {
+        "speed": {
+          "name": "Flow speed",
+          "description": "Target flow speed in m³/h"
+        }
+      }
+    },
+    "set_power_mode": {
+      "name": "Set power mode",
+      "description": "Set the power switch position for the BRINK HRU unit",
+      "fields": {
+        "mode": {
+          "name": "Power mode",
+          "description": "The power mode to set"
+        }
+      }
+    },
+    "reset_device": {
+      "name": "Reset device",
+      "description": "Reset the BRINK HRU device (use with caution)"
+    },
+    "read_all_registers": {
+      "name": "Read all registers",
+      "description": "Read all Modbus registers for diagnostics (returns data as event)"
+    }
+  }
+}
