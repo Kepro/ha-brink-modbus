@@ -342,9 +342,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- Create an [issue](https://github.com/Kepro/ha-brink-hru/issues) for bug reports
+- Create an [issue](https://github.com/Kepro/ha-brink-modbus/issues) for bug reports
 - Join the [Home Assistant Community](https://community.home-assistant.io/) for discussions
-- Check the [documentation](https://github.com/Kepro/ha-brink-hru/wiki) for detailed guides
+- Check the [documentation](https://github.com/Kepro/ha-brink-modbus/wiki) for detailed guides
 
 ## Acknowledgments
 
@@ -357,9 +357,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Made with ❤️ for the Home Assistant community**
 
 [releases-shield]: https://img.shields.io/github/release/Kepro/ha-brink-hru.svg?style=for-the-badge
-[releases]: https://github.com/Kepro/ha-brink-hru/releases
+[releases]: https://github.com/Kepro/ha-brink-modbus/releases
 [commits-shield]: https://img.shields.io/github/commit-activity/y/Kepro/ha-brink-hru.svg?style=for-the-badge
-[commits]: https://github.com/Kepro/ha-brink-hru/commits/main
+[commits]: https://github.com/Kepro/ha-brink-modbus/commits/main
 [license-shield]: https://img.shields.io/github/license/Kepro/ha-brink-hru.svg?style=for-the-badge
 [hacs]: https://github.com/hacs/integration
 [hacsbadge]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
